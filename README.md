@@ -1,7 +1,8 @@
 # Stable Diffusion web UI
 A browser interface based on Gradio library for Stable Diffusion.
 
-![](txt2img_Screenshot.png)
+![Screenshot-Stable-Diffusion](https://user-images.githubusercontent.com/40300551/218059914-ee820f33-becc-494f-acd4-f7ddb2d43110.jpg)
+
 
 Check the [custom scripts](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts) wiki page for extra scripts developed by users.
 
