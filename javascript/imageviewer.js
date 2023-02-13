@@ -148,7 +148,11 @@ function showGalleryImage() {
                 if(e && e.parentElement.tagName == 'DIV'){
                     e.style.cursor='pointer'
                     e.style.userSelect='none'
-                    e.addEventListener('click', function (evt) {
+
+                    var isFirefox = isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1
+                    var event = isFirefox ? 'mousedown' : 'click'
+
+                    e.addEventListener(event, function (evt) {
                         if(!opts.js_modal_lightbox) return;
                         modalZoomSet(gradioApp().getElementById('modalImage'), opts.js_modal_lightbox_initially_zoomed)
                         evt.preventDefault()
