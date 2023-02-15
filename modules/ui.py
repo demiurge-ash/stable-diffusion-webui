@@ -1632,6 +1632,10 @@ def create_ui():
         if os.path.exists(os.path.join(script_path, "notification.mp3")):
             audio_notification = gr.Audio(interactive=False, value=os.path.join(script_path, "notification.mp3"), elem_id="audio_notification", visible=False)
 
+        footer = shared.html("footer.html")
+        footer = footer.format(versions=versions_html())
+        gr.HTML(footer, elem_id="footer")
+        
         text_settings = gr.Textbox(elem_id="settings_json", value=lambda: opts.dumpjson(), visible=False)
         settings_submit.click(
             fn=wrap_gradio_call(run_settings, extra_outputs=[gr.update()]),
@@ -1790,3 +1794,29 @@ def reload_javascript():
 
 if not hasattr(shared, 'GradioTemplateResponseOriginal'):
     shared.GradioTemplateResponseOriginal = gradio.routes.templates.TemplateResponse
+
+def versions_html():
+    import torch
+    import launch
+
+    python_version = ".".join([str(x) for x in sys.version_info[0:3]])
+    commit = launch.commit_hash()
+    short_commit = commit[0:8]
+
+    if shared.xformers_available:
+        import xformers
+        xformers_version = xformers.__version__
+    else:
+        xformers_version = "N/A"
+
+    return f"""
+python: <span title="{sys.version}">{python_version}</span>
+ • 
+torch: {torch.__version__}
+ • 
+xformers: {xformers_version}
+ • 
+gradio: {gr.__version__}
+ • 
+commit: <a href="https://github.com/demiurge-ash/stable-diffusion-webui/commit/{commit}">{short_commit}</a>
+"""

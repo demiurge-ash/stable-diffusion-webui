@@ -568,6 +568,23 @@ img2maskimg, #img2maskimg > .h-60, #img2maskimg > .h-60 > div, #img2maskimg > .h
     font-size: 95%;
 }
 
+footer {
+    display: none !important;
+}
+
+#footer{
+    text-align: center;
+}
+
+#footer div{
+    display: inline-block;
+}
+
+#footer .versions{
+    font-size: 85%;
+    opacity: 0.85;
+}
+
 /* The following handles localization for right-to-left (RTL) languages like Arabic.
 The rtl media type will only be activated by the logic in javascript/localization.js.
 If you change anything above, you need to make sure it is RTL compliant by just running

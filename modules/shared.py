@@ -589,3 +589,17 @@ mem_mon.start()
 def listfiles(dirname):
     filenames = [os.path.join(dirname, x) for x in sorted(os.listdir(dirname)) if not x.startswith(".")]
     return [file for file in filenames if os.path.isfile(file)]
+
+
+def html_path(filename):
+    return os.path.join(script_path, "html", filename)
+
+
+def html(filename):
+    path = html_path(filename)
+
+    if os.path.exists(path):
+        with open(path, encoding="utf8") as file:
+            return file.read()
+
+    return ""
