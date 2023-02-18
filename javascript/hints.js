@@ -4,7 +4,7 @@ titles = {
     "Sampling steps": "How many times to improve the generated image iteratively; higher values take longer; very low values can produce bad results",
     "Sampling method": "Which algorithm to use to produce the image",
 	"GFPGAN": "Restore low quality faces using GFPGAN neural network",
-	"Euler a": "Euler Ancestral - very creative, each can get a completely different picture depending on step count, setting steps to higher than 30-40 does not help",
+	"Euler a": "Euler Ancestral - very creative, each can get a completely different picture depending on step count, setting steps higher than 30-40 does not help",
 	"DDIM": "Denoising Diffusion Implicit Models - best at inpainting",
 	"DPM adaptive": "Ignores step count - uses a number of steps determined by the CFG and resolution", 
 
@@ -12,8 +12,8 @@ titles = {
 	"Batch size": "How many image to create in a single batch",
     "CFG Scale": "Classifier Free Guidance Scale - how strongly the image should conform to prompt - lower values produce more creative results",
     "Seed": "A value that determines the output of random number generator - if you create an image with same parameters and seed as another image, you'll get the same result",
-    "\u{1f3b2}\ufe0f": "Set seed to -1, which will cause a new random number to be used every time",
-    "\u267b\ufe0f": "Reuse seed from last generation, mostly useful if it was randomed",
+    "\u{1f3b2}\ufe0f": "Set seed to -1 will set a new random number every time.",
+    "\u267b\ufe0f": "Reuse seed from last generation, most useful if it was randomized.",
     "\u{1f3a8}": "Add a random artist to the prompt.",
     "\u2199\ufe0f": "Read generation parameters from prompt or last generation if prompt is empty into user interface.",
     "\u{1f4c2}": "Open images output directory",
@@ -95,12 +95,12 @@ titles = {
     "Weighted sum": "Result = A * (1 - M) + B * M",
     "Add difference": "Result = A + (B - C) * M",
 
-    "Learning rate": "how fast should the training go. Low values will take longer to train, high values may fail to converge (not generate accurate results) and/or may break the embedding (This has happened if you see Loss: nan in the training info textbox. If this happens, you need to manually restore your embedding from an older not-broken backup).\n\nYou can set a single numeric value, or multiple learning rates using the syntax:\n\n   rate_1:max_steps_1, rate_2:max_steps_2, ...\n\nEG:   0.005:100, 1e-3:1000, 1e-5\n\nWill train with rate of 0.005 for first 100 steps, then 1e-3 until 1000 steps, then 1e-5 for all remaining steps.",
+    "Learning rate": "How fast should training go. Low values will take longer to train, high values may fail to converge (not generate accurate results) and/or may break the embedding (This has happened if you see Loss: nan in the training info textbox. If this happens, you need to manually restore your embedding from an older not-broken backup).\n\nYou can set a single numeric value, or multiple learning rates using the syntax:\n\n   rate_1:max_steps_1, rate_2:max_steps_2, ...\n\nEG:   0.005:100, 1e-3:1000, 1e-5\n\nWill train with rate of 0.005 for first 100 steps, then 1e-3 until 1000 steps, then 1e-5 for all remaining steps.",
 
     "Clip skip": "Early stopping parameter for CLIP model; 1 is stop at last layer as usual, 2 is stop at penultimate layer, etc.",
 
-    "Approx NN": "Cheap neural network approximation. Very fast compared to VAE, but produces pictures with 4 times smaller horizontal/vertical resoluton and lower quality.",
-    "Approx cheap": "Very cheap approximation. Very fast compared to VAE, but produces pictures with 8 times smaller horizontal/vertical resoluton and extremely low quality."
+    "Approx NN": "Cheap neural network approximation. Very fast compared to VAE, but produces pictures with 4 times smaller horizontal/vertical resolution and lower quality.",
+    "Approx cheap": "Very cheap approximation. Very fast compared to VAE, but produces pictures with 8 times smaller horizontal/vertical resolution and extremely low quality."
 }
 
 
