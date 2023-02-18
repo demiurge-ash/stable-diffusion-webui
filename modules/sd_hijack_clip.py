@@ -243,9 +243,9 @@ class FrozenCLIPEmbedderWithCustomWordsBase(torch.nn.Module):
         batch_multipliers_of_same_length = [x + [1.0] * (75 - len(x)) for x in batch_multipliers]
         batch_multipliers = torch.asarray(batch_multipliers_of_same_length).to(devices.device)
         original_mean = z.mean()
-        z *= batch_multipliers.reshape(batch_multipliers.shape + (1,)).expand(z.shape)
+        z = z * batch_multipliers.reshape(batch_multipliers.shape + (1,)).expand(z.shape)
         new_mean = z.mean()
-        z *= original_mean / new_mean
+        z = z * (original_mean / new_mean)
 
         return z
 
