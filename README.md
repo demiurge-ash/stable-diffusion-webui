@@ -1,7 +1,9 @@
 # Stable Diffusion web UI
 A browser interface based on Gradio library for Stable Diffusion.
 
-![](screenshot.png)
+**This is Stable version of [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui). No bugs, no untested features, just creativity.**
+
+![Screenshot-Stable-Diffusion](https://user-images.githubusercontent.com/40300551/218060909-79a0a4cb-8cf3-42f9-894c-4a28cc9f7b4a.jpg)
 
 ## Features
 [Detailed feature showcase with images](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features):
@@ -103,7 +105,7 @@ Alternatively, use online services (like Google Colab):
 ### Automatic Installation on Windows
 1. Install [Python 3.10.6](https://www.python.org/downloads/windows/), checking "Add Python to PATH"
 2. Install [git](https://git-scm.com/download/win).
-3. Download the stable-diffusion-webui repository, for example by running `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git`.
+3. Download the stable-diffusion-webui repository, for example by running `git clone https://github.com/demiurge-ash/stable-diffusion-webui.git`.
 4. Run `webui-user.bat` from Windows Explorer as normal, non-administrator, user.
 
 ### Automatic Installation on Linux
@@ -118,7 +120,7 @@ sudo pacman -S wget git python3
 ```
 2. To install in `/home/$(whoami)/stable-diffusion-webui/`, run:
 ```bash
-bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/demiurge-ash/stable-diffusion-webui/master/webui.sh)
 ```
 3. Run `webui.sh`.
 ### Installation on Apple Silicon
