@@ -761,6 +761,7 @@ footer {
 
 .gr-compact {
     border: none;
+    gap: 1rem 0;
 }
 
 .dark .gr-compact{
