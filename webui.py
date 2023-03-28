@@ -4,6 +4,7 @@ import time
 import importlib
 import signal
 import re
+import warnings
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
@@ -17,6 +18,8 @@ from modules import extra_networks_hypernet, ui_extra_networks_hypernets, ui_ext
 from modules.call_queue import wrap_queued_call, queue_lock, wrap_gradio_gpu_call
 
 import torch
+import pytorch_lightning # pytorch_lightning should be imported after torch, but it re-enables warnings on import so import once to disable them
+warnings.filterwarnings(action="ignore", category=DeprecationWarning, module="pytorch_lightning")
 
 # Truncate version number of nightly/local build of PyTorch to not cause exceptions with CodeFormer or Safetensors
 if ".dev" in torch.__version__ or "+git" in torch.__version__:
